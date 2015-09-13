@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import Radium from 'radium';
+import DocumentTitle from 'react-document-title';
 import styler from 'react-styling';
 import { PageHeading, IconHeading } from '../components';
 
@@ -16,7 +17,8 @@ export default class Blog extends Component {
   render() {
     return (
       <div>
-        <PageHeading>Blog</PageHeading>
+        <DocumentTitle title='Blog - SCOOPS'/>
+        <PageHeading inverted={false}>Blog</PageHeading>
       </div>
     );
   }

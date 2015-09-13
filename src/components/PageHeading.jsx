@@ -8,13 +8,16 @@ import styler from 'react-styling';
 export default class PageHeading extends Component {
 
   static defaultProps = {
-    content: 'Title'
+    content: 'Title',
+    inverted: true
   }
 
   render() {
-    let content = this.props.children || this.props.content;
+    let inverted = this.props.inverted,
+        content = this.props.children || this.props.content;
+
     return (
-      <header style={styles.header}>
+      <header style={inverted ? styles.header.inverted : styles.header}>
         <h1>{content}</h1>
       </header>
     );
@@ -24,8 +27,10 @@ export default class PageHeading extends Component {
 
 const styles = styler`
   header
-    color: rgba(255,255,255,1)
     text-align: center
     margin-top: 90px
     padding: 60px 20px
+
+    &inverted
+      color: rgba(255,255,255,1)
 `;

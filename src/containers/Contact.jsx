@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import DocumentTitle from 'react-document-title';
 import Radium from 'radium';
 import styler from 'react-styling';
 
@@ -14,7 +15,9 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <DocumentTitle title='Contact - SCOOPS'/>
+      </div>
     );
   }
 

@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import DocumentTitle from 'react-document-title';
 import Radium from 'radium';
 import styler from 'react-styling';
 import { IconHeading, SectionLink, HEventList } from '../components';
@@ -41,6 +42,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <DocumentTitle title='Home - SCOOPS'/>
 
         <header style={styles.header}>
           <div style={styles.headerText}>

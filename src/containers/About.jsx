@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import DocumentTitle from 'react-document-title';
 import Radium from 'radium';
 import styler from 'react-styling';
 import { PageHeading, IconHeading } from '../components';
@@ -16,6 +17,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
+        <DocumentTitle title='About - SCOOPS'/>
         <PageHeading>About <em>SCOOPS</em></PageHeading>
         <IconHeading icon='face'>The Team</IconHeading>
       </div>
