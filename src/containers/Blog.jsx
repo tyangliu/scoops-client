@@ -15,7 +15,7 @@ export default class Blog extends Component {
 
   render() {
     return (
-      <div style={styles.blog}>
+      <div>
         <PageHeading>Blog</PageHeading>
       </div>
     );
@@ -24,6 +24,4 @@ export default class Blog extends Component {
 }
 
 const styles = styler`
-  blog
-    padding-top: 90px
 `;

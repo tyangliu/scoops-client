@@ -15,7 +15,7 @@ export default class Mentorship extends Component {
 
   render() {
     return (
-      <div style={styles.mentorship}>
+      <div>
         <PageHeading>Mentorship Program</PageHeading>
       </div>
     );
@@ -24,7 +24,4 @@ export default class Mentorship extends Component {
 }
 
 const styles = styler`
-  mentorship
-    padding-top: 90px
-    background: rgba(226,113,77,1)
 `;

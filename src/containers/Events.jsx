@@ -15,7 +15,7 @@ export default class Events extends Component {
 
   render() {
     return (
-      <div style={styles.events}>
+      <div>
         <PageHeading>Events</PageHeading>
         <IconHeading icon='event'>Upcoming</IconHeading>
         <IconHeading icon='history'>Past</IconHeading>
@@ -26,7 +26,5 @@ export default class Events extends Component {
 }
 
 const styles = styler`
-  events
-    padding-top: 90px
-    background: rgba(75,116,181,1)
+
 `;

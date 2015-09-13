@@ -24,7 +24,8 @@ export default class PageHeading extends Component {
 
 const styles = styler`
   header
-    text-align: center
-    padding: 60px 20px
     color: rgba(255,255,255,1)
+    text-align: center
+    margin-top: 90px
+    padding: 60px 20px
 `;

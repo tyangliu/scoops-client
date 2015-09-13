@@ -40,7 +40,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div style={styles.home}>
+      <div>
 
         <header style={styles.header}>
           <div style={styles.headerText}>
@@ -72,9 +72,6 @@ export default class Home extends Component {
 }
 
 const styles = styler`
-  home
-    background: rgba(48,161,196,1)
-
   header
     height: 460px
 

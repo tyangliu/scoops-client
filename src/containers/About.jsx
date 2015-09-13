@@ -15,7 +15,7 @@ export default class About extends Component {
 
   render() {
     return (
-      <div style={styles.about}>
+      <div>
         <PageHeading>About <em>SCOOPS</em></PageHeading>
         <IconHeading icon='face'>The Team</IconHeading>
       </div>
@@ -25,7 +25,4 @@ export default class About extends Component {
 }
 
 const styles = styler`
-  about
-    padding-top: 90px
-    background: rgba(68,137,193,1)
 `;
