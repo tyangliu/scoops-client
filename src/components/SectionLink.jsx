@@ -35,7 +35,7 @@ export default class SectionLink extends Component {
 
 }
 
-const styles = styler `
+const styles = styler`
   linkContainer
     display: block
     text-align: center

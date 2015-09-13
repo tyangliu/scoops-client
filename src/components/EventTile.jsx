@@ -32,7 +32,7 @@ export default class EventTile extends Component {
 
 }
 
-const styles = styler `
+const styles = styler`
   eventTile
     width: 100%
     height: 100%

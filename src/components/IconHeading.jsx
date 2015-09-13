@@ -31,7 +31,7 @@ export default class IconHeading extends Component {
 
 }
 
-const styles = styler `
+const styles = styler`
   heading
     width: 100%
     text-align: center

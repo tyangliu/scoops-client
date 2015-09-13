@@ -21,7 +21,7 @@ export default class FooterBar extends Component {
 
 }
 
-const styles = styler `
+const styles = styler`
   footer
     flex: none
     padding: 11px 24px
