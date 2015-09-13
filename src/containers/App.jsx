@@ -33,7 +33,7 @@ const styles = styler`
   app
     font-family: 'effra', sans-serif
     font-size: 16px
-    line-height: 1.4em
+    line-height: 1.5em
     color: rgba(24,50,79,1)
     display: flex
     flex-direction: column

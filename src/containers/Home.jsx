@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import styler from 'react-styling';
+import { IconHeading, SectionLink } from '../components';
 
 @Radium
 export default class Home extends Component {
@@ -10,6 +11,7 @@ export default class Home extends Component {
   render() {
     return (
       <div style={styles.home}>
+
         <header style={styles.header}>
           <div style={styles.headerText}>
             <h1>Where the Sciences Come Together at UBC</h1>
@@ -25,6 +27,10 @@ export default class Home extends Component {
             </p>
           </div>
         </header>
+
+        <IconHeading icon='today'>Upcoming Events</IconHeading>
+        <SectionLink to='/events'>To All Events</SectionLink>
+
       </div>
     );
   }
