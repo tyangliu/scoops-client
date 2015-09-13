@@ -59,6 +59,9 @@ const styles = styler`
       font-size: 24px
       font-weight: 500
 
+    em
+      font-style: italic
+
     a
       text-decoration: none
       font-weight: bold

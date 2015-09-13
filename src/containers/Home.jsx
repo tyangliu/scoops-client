@@ -53,9 +53,12 @@ export default class Home extends Component {
           </div>
         </header>
 
-        <IconHeading icon='today'>Upcoming Events</IconHeading>
+        <IconHeading icon='event'>Upcoming Events</IconHeading>
         <HEventList events={this.state.events} />
         <SectionLink to='/events'>To All Events</SectionLink>
+
+        <IconHeading icon='chrome_reader_mode'>The Latest Scoop</IconHeading>
+        <SectionLink to='/blog'>To the Blog</SectionLink>
 
       </div>
     );

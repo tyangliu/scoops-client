@@ -3,17 +3,23 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import styler from 'react-styling';
+import { PageHeading, IconHeading } from '../components';
 
 @Radium
 export default class Mentorship extends Component {
 
   render() {
     return (
-      <div></div>
+      <div style={styles.mentorship}>
+        <PageHeading>Mentorship Program</PageHeading>
+      </div>
     );
   }
 
 }
 
 const styles = styler`
+  mentorship
+    padding-top: 90px
+    background: rgba(226,113,77,1)
 `;

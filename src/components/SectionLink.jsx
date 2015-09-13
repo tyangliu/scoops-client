@@ -40,6 +40,7 @@ const styles = styler`
     display: block
     text-align: center
     padding: 14px 0
+    margin-bottom: 36px
 
   sectionLink
     &inverted

@@ -25,7 +25,7 @@ const styles = styler`
   footer
     flex: none
     padding: 11px 24px
-    border-top: 1px solid rgba(0,0,0,0.1)
+    border-top: 1px solid rgba(0,0,0,0.15)
 
   logo
     background: url('${require('../images/logo-color.svg')}') no-repeat center
