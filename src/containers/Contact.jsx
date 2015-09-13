@@ -7,6 +7,11 @@ import styler from 'react-styling';
 @Radium
 export default class Contact extends Component {
 
+  componentWillMount() {
+    this.props.setInvertedNav(false);
+    this.props.setBackgroundColor('rgba(255,255,255,1)');
+  }
+
   render() {
     return (
       <div></div>

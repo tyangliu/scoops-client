@@ -33,6 +33,11 @@ export default class Home extends Component {
     ]
   }
 
+  componentWillMount() {
+    this.props.setInvertedNav(true);
+    this.props.setBackgroundColor('rgba(48,161,196,1)');
+  }
+
   render() {
     return (
       <div style={styles.home}>

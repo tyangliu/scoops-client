@@ -41,16 +41,16 @@ const styles = styler`
   listGroup
     float: left
     width: 50%
-    height: 280px
+    height: 300px
 
     @media (max-width: 1200px)
       width: 100%
     @media (max-width: 780px)
-      height: 560px
+      height: 600px
 
   eventTileContainer
     width: 50%
-    height: 280px
+    height: 300px
     display: inline-block
 
     @media (max-width: 780px)

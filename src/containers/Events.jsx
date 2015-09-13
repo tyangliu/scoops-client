@@ -8,6 +8,11 @@ import { PageHeading, IconHeading } from '../components';
 @Radium
 export default class Events extends Component {
 
+  componentWillMount() {
+    this.props.setInvertedNav(true);
+    this.props.setBackgroundColor('rgba(75,116,181,1)');
+  }
+
   render() {
     return (
       <div style={styles.events}>

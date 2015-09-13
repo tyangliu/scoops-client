@@ -8,6 +8,11 @@ import { PageHeading, IconHeading } from '../components';
 @Radium
 export default class About extends Component {
 
+  componentWillMount() {
+    this.props.setInvertedNav(true);
+    this.props.setBackgroundColor('rgba(68,137,193,1)');
+  }
+
   render() {
     return (
       <div style={styles.about}>

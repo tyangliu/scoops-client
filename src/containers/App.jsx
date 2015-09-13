@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
 import Radium, { Style } from 'radium';
 import styler from 'react-styling';
 import { Link } from 'react-router';
@@ -9,11 +9,22 @@ import { NavBar, FooterBar } from '../components';
 @Radium
 export default class App extends Component {
 
+  state = {
+    inverted: false,
+    backgroundColor: 'rgba(255,255,255,1)'
+  }
+
   render() {
+    let children = Children.map(this.props.children, child =>
+      React.cloneElement(child, {
+        setInvertedNav: inverted => this.setState({inverted: !!inverted}),
+        setBackgroundColor: color => this.setState({backgroundColor: color})
+      })
+    );
     return (
       <div style={styles.app}>
         <Style rules={styles.appRules} />
-        <NavBar>
+        <NavBar inverted={this.state.inverted}>
           <Link to='/' activeClassName='active' onlyActiveOnIndex={true}>Home</Link>
           <Link to='/events' activeClassName='active'>Events</Link>
           <Link to='/blog' activeClassName='active'>Blog</Link>
@@ -21,7 +32,7 @@ export default class App extends Component {
           <Link to='/about' activeClassName='active'>About</Link>
           <Link to='/contact' activeClassName='active'>Contact</Link>
         </NavBar>
-        <main>{this.props.children}</main>
+        <main style={{backgroundColor: this.state.backgroundColor}}>{children}</main>
         <FooterBar />
       </div>
     );
