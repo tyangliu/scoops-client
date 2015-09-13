@@ -20,25 +20,28 @@ export default class SectionLink extends Component {
         content  = this.props.children || this.props.content;
 
     return (
-      <Link to={this.props.to} style={inverted ? styles.sectionLink.inverted : styles.sectionLink}>
-        <span style={styles.sectionLinkText}>
-          {content}
-        </span>
-        <i className='material-icons' style={styles.sectionLinkArrow}>
-          chevron_right
-        </i>
-      </Link>
+      <div style={styles.linkContainer}>
+        <Link to={this.props.to} style={inverted ? styles.sectionLink.inverted : styles.sectionLink}>
+          <span style={styles.sectionLinkText}>
+            {content}
+          </span>
+          <i className='material-icons' style={styles.sectionLinkArrow}>
+            chevron_right
+          </i>
+        </Link>
+      </div>
     );
   }
 
 }
 
 const styles = styler `
-  sectionLink
+  linkContainer
     display: block
     text-align: center
-    padding: 10px 0
+    padding: 14px 0
 
+  sectionLink
     &inverted
       color: rgba(255,255,255,1)
 

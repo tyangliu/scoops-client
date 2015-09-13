@@ -43,7 +43,7 @@ const styles = styler`
     *
       box-sizing: border-box
 
-    h1, h2
+    h1, h2, h3
       font-family: 'quatro-slab', serif
       line-height: 1.7em
 
@@ -57,6 +57,7 @@ const styles = styler`
 
     h3
       font-size: 24px
+      font-weight: 500
 
     a
       text-decoration: none
@@ -65,4 +66,5 @@ const styles = styler`
     main
       flex: 1 0 auto
       width: 100%
+}
 `;

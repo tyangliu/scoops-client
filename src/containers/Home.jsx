@@ -3,10 +3,35 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import styler from 'react-styling';
-import { IconHeading, SectionLink } from '../components';
+import { IconHeading, SectionLink, HEventList } from '../components';
 
 @Radium
 export default class Home extends Component {
+
+  state = {
+    events: [
+      {
+        name: 'Krispy Kreme Sale',
+        startTime: '2015-09-13T19:19:53.079Z',
+        endTime: '2015-09-13T19:19:53.079Z'
+      },
+      {
+        name: 'Mentorship Kickoff',
+        startTime: '2015-09-13T19:19:53.079Z',
+        endTime: '2015-09-13T19:19:53.079Z'
+      },
+      {
+        name: 'MICE',
+        startTime: '2015-09-13T19:19:53.079Z',
+        endTime: '2015-09-13T19:19:53.079Z'
+      },
+      {
+        name: 'Interview Workshop',
+        startTime: '2015-09-13T19:19:53.079Z',
+        endTime: '2015-09-13T19:19:53.079Z'
+      }
+    ]
+  }
 
   render() {
     return (
@@ -29,6 +54,7 @@ export default class Home extends Component {
         </header>
 
         <IconHeading icon='today'>Upcoming Events</IconHeading>
+        <HEventList events={this.state.events} />
         <SectionLink to='/events'>To All Events</SectionLink>
 
       </div>

@@ -35,7 +35,7 @@ const styles = styler `
   heading
     width: 100%
     text-align: center
-    padding: 10px 0
+    padding: 14px 0
 
   icon
     font-size: 36px
