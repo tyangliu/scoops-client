@@ -107,7 +107,8 @@ export default class Home extends Component {
 
 const styles = styler`
   header
-    height: 460px
+    height: 540px
+    padding: 0 24px
 
   headerText
     text-align: center
