@@ -39,12 +39,18 @@ const styles = styler`
   linkContainer
     display: block
     text-align: center
-    padding: 14px 0
     margin-bottom: 36px
+    padding: 14px 0
 
   sectionLink
+    display: inline-block
+    padding: 7px 0
+    color: rgba(48,161,196,1)
+    border-bottom: 2px solid rgba(48,161,196,1)
+
     &inverted
       color: rgba(255,255,255,1)
+      border-bottom: none
 
   sectionLinkText
     display: inline-block
@@ -56,4 +62,5 @@ const styles = styler`
     font-size: 36px
     line-height: 36px
     vertical-align: middle
+    margin-right: -4px
 `;

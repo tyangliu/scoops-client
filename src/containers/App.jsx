@@ -74,6 +74,7 @@ const styles = styler`
       font-style: italic
 
     a
+      color: rgba(75,116,181,1)
       text-decoration: none
       font-weight: bold
 

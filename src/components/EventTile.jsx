@@ -24,7 +24,7 @@ export default class EventTile extends Component {
         <div style={styles.thumbnail}></div>
         <div style={styles.summary}>
           <h3>{name}</h3>
-          <p>{startTime}-{endTime}</p>
+          <p style={styles.date}>{startTime}-{endTime}</p>
         </div>
       </div>
     );
@@ -44,8 +44,14 @@ const styles = styler`
 
   summary
     position: absolute
-    padding: 14px 24px
+    padding: 12px 24px 16px
     bottom: 0
     width: 100%
     background: rgba(255,255,255,0.9)
+
+  date
+    font-size: 14px
+    text-transform: uppercase
+    letter-spacing: 1px
+    opacity: 0.85
 `;

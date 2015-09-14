@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import DocumentTitle from 'react-document-title';
 import Radium from 'radium';
 import styler from 'react-styling';
-import { IconHeading, SectionLink, HEventList } from '../components';
+import { IconHeading, SectionLink, HEventList, HArticleList } from '../components';
 
 @Radium
 export default class Home extends Component {
@@ -30,6 +30,32 @@ export default class Home extends Component {
         name: 'Interview Workshop',
         startTime: '2015-09-13T19:19:53.079Z',
         endTime: '2015-09-13T19:19:53.079Z'
+      }
+    ],
+    articles: [
+      {
+        title: 'Two Scoops to Victory',
+        createdOn: '2015-09-13T19:19:53.079Z',
+        summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a
+          type specimen book...`
+      },
+      {
+        title: 'Lorem Ipsum',
+        createdOn: '2015-09-13T19:19:53.079Z',
+        summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a
+          type specimen book...`
+      },
+      {
+        title: 'Lorem Ipsum',
+        createdOn: '2015-09-13T19:19:53.079Z',
+        summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a
+          type specimen book...`
       }
     ]
   }
@@ -60,12 +86,18 @@ export default class Home extends Component {
           </div>
         </header>
 
-        <IconHeading icon='event'>Upcoming Events</IconHeading>
-        <HEventList events={this.state.events} />
-        <SectionLink to='/events'>To All Events</SectionLink>
+        <div>
+          <IconHeading icon='event'>Upcoming Events</IconHeading>
+          <HEventList events={this.state.events} />
+          <SectionLink to='/events'>To All Events</SectionLink>
+        </div>
 
-        <IconHeading icon='chrome_reader_mode'>The Latest Scoop</IconHeading>
-        <SectionLink to='/blog'>To the Blog</SectionLink>
+        <div style={styles.articles}>
+          <div style={styles.articlesBackground}></div>
+          <IconHeading icon='chrome_reader_mode'>The Latest Scoop</IconHeading>
+          <HArticleList articles={this.state.articles} />
+          <SectionLink to='/blog' inverted={false}>To the Blog</SectionLink>
+        </div>
 
       </div>
     );
@@ -94,4 +126,18 @@ const styles = styler`
     font-weight: bold
     text-transform: uppercase
     letter-spacing: 1px
+
+  articles
+    z-index: 0
+    position: relative
+    padding: 20px 0 60px
+    overflow-y: hidden
+
+  articlesBackground
+    background: rgba(255,255,255,1)
+    position: absolute
+    top: 220px
+    width: 100%
+    height: 100%
+    z-index: -1
 `;

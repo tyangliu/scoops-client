@@ -9,3 +9,6 @@ export SectionLink from './SectionLink.jsx';
 
 export HEventList from './HEventList.jsx';
 export EventTile from './EventTile.jsx';
+
+export HArticleList from './HArticleList.jsx';
+export ArticleTile from './ArticleTile.jsx';
