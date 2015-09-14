@@ -29,9 +29,9 @@ export default class App extends Component {
           <Link to='/contact' activeClassName='active'>Contact</Link>
         </NavBar>
         <main style={{
-            backgroundColor: this.state.backgroundColor,
-            transition: 'background-color 0.4s ease'
-          }}>
+          backgroundColor: this.state.backgroundColor,
+          transition: 'background-color 0.2s ease-in-out'
+        }}>
           <CSSTransitionGroup component='div' transitionName='page' transitionLeave={false}>
             {React.cloneElement(this.props.children || <div />, {
               setInvertedNav: inverted => this.setState({inverted: !!inverted}),
@@ -91,7 +91,7 @@ const styles = styler`
 
     div.page-enter {
       opacity: 0;
-      transition: opacity .4s ease;
+      transition: opacity .2s ease-in-out;
     }
 
     div.page-enter.page-enter-active {
