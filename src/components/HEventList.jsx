@@ -35,7 +35,7 @@ export default class HEventList extends Component {
 
 const styles = styler`
   eventList
-    box-shadow: 0 0 6px rgba(0,0,0,0.3)
+    box-shadow: 0 1px 6px rgba(0,0,0,0.25)
     width: 100%
 
   listGroup

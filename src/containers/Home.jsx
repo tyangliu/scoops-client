@@ -62,7 +62,7 @@ export default class Home extends Component {
 
   componentWillMount() {
     this.props.setInvertedNav(true);
-    this.props.setBackgroundColor('rgba(48,161,196,1)');
+    this.props.setBackgroundColor('rgba(7,176,193,1)');
   }
 
   render() {
