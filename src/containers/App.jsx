@@ -56,7 +56,7 @@ const styles = styler`
 
     h1, h2, h3
       font-family: 'quatro-slab', serif
-      line-height: 1.7em
+      line-height: 1.5em
 
     h1
       font-size: 39px

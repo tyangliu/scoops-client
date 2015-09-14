@@ -70,7 +70,7 @@ export default class Home extends Component {
       <div>
         <DocumentTitle title='Home - SCOOPS'/>
 
-        <header style={styles.header}>
+        <header style={styles.header} key='home0'>
           <div style={styles.headerText}>
             <h1>Where the Sciences Come Together at UBC</h1>
             <p style={styles.caption}>
@@ -109,6 +109,9 @@ const styles = styler`
   header
     height: 540px
     padding: 0 24px
+
+    @media (max-width: 480px)
+      height: 640px
 
   headerText
     text-align: center

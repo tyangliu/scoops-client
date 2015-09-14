@@ -125,6 +125,7 @@ const styles = styler`
     background: none
     outline: none
     border: none
+    padding: 0
     color: rgba(75,116,181,1)
 
     &inverted
