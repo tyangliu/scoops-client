@@ -33,18 +33,18 @@ export default class NavBar extends Component {
 
     let navStyles = mobileMenuOpen
       ? (inverted ? styles.nav.openInverted : styles.nav.open)
-      : styles.nav;
+      : styles.nav.normal;
 
     return (
       <nav style={navStyles} className="mainNav">
         <Style rules={inverted ? styles.navRulesInverted : styles.navRules} scopeSelector=".mainNav"/>
         <div style={styles.logo}>
-          <div style={inverted ? styles.logoImg.inverted : styles.logoImg}></div>
-          <p style={inverted ? styles.logoText.inverted : styles.logoText} key='logoText0'>
+          <div style={inverted ? styles.logoImg.inverted : styles.logoImg.normal}></div>
+          <p style={inverted ? styles.logoText.inverted : styles.logoText.normal} key='logoText0'>
             Science Co-op Students Association
           </p>
         </div>
-        <button style={inverted ? styles.menuToggle.inverted : styles.menuToggle}
+        <button style={inverted ? styles.menuToggle.inverted : styles.menuToggle.normal}
                 key='menuToggle0'
                 onClick={this.toggleMenu}>
           <i style={styles.menuToggleIcon} className='material-icons'>{mobileMenuOpen ? 'close' : 'menu'}</i>
@@ -66,6 +66,8 @@ const styles = styler`
     position: absolute
     top: 0
     width: 100%
+
+    &normal
 
     &open
       @media (max-width: 800px)
@@ -104,6 +106,8 @@ const styles = styler`
     height: 47px
     float: left
 
+    &normal
+
     &inverted
       background: url('${require('../images/logo-white.svg')}') no-repeat center
 
@@ -114,11 +118,13 @@ const styles = styler`
     float: left
     opacity: 0.6
 
-    &inverted
-      color: rgba(255,255,255,1)
-
     @media (max-width: 1020px)
       display: none
+
+    &normal
+
+    &inverted
+      color: rgba(255,255,255,1)
 
   menuToggle
     display: none
@@ -128,12 +134,14 @@ const styles = styler`
     padding: 0
     color: rgba(75,116,181,1)
 
-    &inverted
-      color: rgba(255,255,255,1)
-
     @media (max-width: 800px)
       display: block
       float: right
+
+    &normal
+
+    &inverted
+      color: rgba(255,255,255,1)
 
   menuToggleIcon
     font-size: 30px

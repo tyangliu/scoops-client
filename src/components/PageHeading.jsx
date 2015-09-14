@@ -17,7 +17,7 @@ export default class PageHeading extends Component {
         content = this.props.children || this.props.content;
 
     return (
-      <header style={inverted ? styles.header.inverted : styles.header}>
+      <header style={inverted ? styles.header.inverted : styles.header.normal}>
         <h1>{content}</h1>
       </header>
     );
@@ -30,6 +30,8 @@ const styles = styler`
     text-align: center
     margin-top: 90px
     padding: 60px 20px
+
+    &normal
 
     &inverted
       color: rgba(255,255,255,1)

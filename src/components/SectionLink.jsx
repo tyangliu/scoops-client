@@ -21,7 +21,8 @@ export default class SectionLink extends Component {
 
     return (
       <div style={styles.linkContainer}>
-        <Link to={this.props.to} style={inverted ? styles.sectionLink.inverted : styles.sectionLink}>
+        <Link to={this.props.to}
+              style={inverted ? styles.sectionLink.inverted : styles.sectionLink.normal}>
           <span style={styles.sectionLinkText}>
             {content}
           </span>
@@ -48,9 +49,11 @@ const styles = styler`
     color: rgba(48,161,196,1)
     border-bottom: 2px solid rgba(48,161,196,1)
 
+    &normal
+
     &inverted
       color: rgba(255,255,255,1)
-      border-bottom: none
+      border-bottom: 2px solid rgba(255,255,255,1)
 
   sectionLinkText
     display: inline-block

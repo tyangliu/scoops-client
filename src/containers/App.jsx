@@ -1,10 +1,12 @@
 'use strict';
 
-import React, { Component, Children } from 'react';
+import React, { Component, Children } from 'react/addons';
 import Radium, { Style } from 'radium';
 import styler from 'react-styling';
-import { Link } from 'react-router';
+import { Router, Link } from 'react-router';
 import { NavBar, FooterBar } from '../components';
+
+let { CSSTransitionGroup } = React.addons;
 
 @Radium
 export default class App extends Component {
@@ -12,15 +14,9 @@ export default class App extends Component {
   state = {
     inverted: false,
     backgroundColor: 'rgba(255,255,255,1)'
-  }
+  };
 
   render() {
-    let children = Children.map(this.props.children, child =>
-      React.cloneElement(child, {
-        setInvertedNav: inverted => this.setState({inverted: !!inverted}),
-        setBackgroundColor: color => this.setState({backgroundColor: color})
-      })
-    );
     return (
       <div style={styles.app}>
         <Style rules={styles.appRules} />
@@ -32,7 +28,18 @@ export default class App extends Component {
           <Link to='/about' activeClassName='active'>About</Link>
           <Link to='/contact' activeClassName='active'>Contact</Link>
         </NavBar>
-        <main style={{backgroundColor: this.state.backgroundColor}}>{children}</main>
+        <main style={{
+            backgroundColor: this.state.backgroundColor,
+            transition: 'background-color 0.4s ease'
+          }}>
+          <CSSTransitionGroup component='div' transitionName='page' transitionLeave={false}>
+            {React.cloneElement(this.props.children || <div />, {
+              setInvertedNav: inverted => this.setState({inverted: !!inverted}),
+              setBackgroundColor: color => this.setState({backgroundColor: color}),
+              key: this.props.location.pathname
+            })}
+          </CSSTransitionGroup>
+        </main>
         <FooterBar />
       </div>
     );
@@ -81,5 +88,13 @@ const styles = styler`
     main
       flex: 1 0 auto
       width: 100%
-}
+
+    div.page-enter {
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    div.page-enter.page-enter-active {
+      opacity: 1;
+    }
 `;

@@ -22,7 +22,7 @@ export default class IconHeading extends Component {
         <i style={inverted ? styles.icon.inverted : styles.icon} className='material-icons'>
           {this.props.icon}
         </i>
-        <span style={inverted ? styles.titleText.inverted : styles.titleText}>
+        <span style={inverted ? styles.titleText.inverted : styles.titleText.normal}>
           {content}
         </span>
       </h2>
@@ -51,6 +51,8 @@ const styles = styler`
     text-transform: uppercase
     letter-spacing: 1px
     display: block
+
+    &normal
 
     &inverted
       color: rgba(255,255,255,1)

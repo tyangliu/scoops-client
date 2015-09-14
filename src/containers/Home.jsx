@@ -69,7 +69,6 @@ export default class Home extends Component {
     return (
       <div>
         <DocumentTitle title='Home - SCOOPS'/>
-
         <header style={styles.header} key='home0'>
           <div style={styles.headerText}>
             <h1>Where the Sciences Come Together at UBC</h1>
@@ -85,20 +84,17 @@ export default class Home extends Component {
             </p>
           </div>
         </header>
-
         <div>
           <IconHeading icon='event'>Upcoming Events</IconHeading>
           <HEventList events={this.state.events} />
           <SectionLink to='/events'>To All Events</SectionLink>
         </div>
-
         <div style={styles.articles}>
           <div style={styles.articlesBackground}></div>
           <IconHeading icon='chrome_reader_mode'>The Latest Scoop</IconHeading>
           <HArticleList articles={this.state.articles} />
           <SectionLink to='/blog' inverted={false}>To the Blog</SectionLink>
         </div>
-
       </div>
     );
   }
