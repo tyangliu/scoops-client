@@ -15,7 +15,7 @@ export default class HEventList extends Component {
   render() {
     let events = this.props.events.slice(0,4),
         eventTiles = events.map((event,index) =>
-          <div style={styles.eventTileContainer} key={'tile' + index}>
+          <div style={styles.eventTileContainer} key={'eventTile' + index}>
             <EventTile name={event.name}
                        startTime={event.startTime}
                        endTime={event.endTime} />

@@ -40,7 +40,9 @@ const styles = styler`
     float: right
     text-align: right
     margin-right: 24px
-    padding: 3px 24px 3px 0
+    padding-top: 3px
+    padding-bottom: 3px
+    padding-right: 24px
     border-right: 1px solid rgba(0,0,0,0.1)
 
     @media (max-width: 480px)

@@ -44,7 +44,7 @@ const styles = styler`
 
   summary
     position: absolute
-    padding: 12px 24px 16px
+    padding: 17px 24px 20px
     bottom: 0
     width: 100%
     background: rgba(255,255,255,0.9)

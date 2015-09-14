@@ -39,7 +39,9 @@ export default class NavBar extends Component {
       <nav style={navStyles} className="mainNav">
         <Style rules={inverted ? styles.navRulesInverted : styles.navRules} scopeSelector=".mainNav"/>
         <div style={styles.logo}>
-          <div style={inverted ? styles.logoImg.inverted : styles.logoImg.normal}></div>
+          <Link to='/'
+                style={inverted ? styles.logoImg.inverted : styles.logoImg.normal}
+                onClick={this.closeMenu} />
           <p style={inverted ? styles.logoText.inverted : styles.logoText.normal} key='logoText0'>
             Science Co-op Students Association
           </p>
@@ -65,20 +67,21 @@ const styles = styler`
     padding: 20px 24px
     position: absolute
     top: 0
+    z-index: 10
     width: 100%
 
     &normal
 
     &open
       @media (max-width: 800px)
-        background: rgba(255,255,255,0.8)
-        z-index: 10
+        background: rgba(255,255,255,0.9)
+        transition: background 0.15s ease-in-out
         height: auto
 
     &openInverted
       @media (max-width: 800px)
-        background: rgba(24,50,79,0.7)
-        z-index: 10
+        background: rgba(24,50,79,0.8)
+        transition: background 0.15s ease-in-out
         height: auto
 
   navRules
@@ -154,6 +157,7 @@ const styles = styler`
       float: none
       width: 100%
       opacity: 0
+      transition: opacity 0.15s ease-in-out
       pointer-events: none
       margin-top: 90px
 
@@ -162,6 +166,8 @@ const styles = styler`
 
     @media (max-width: 800px)
       float: none
+      opacity: 1
+      transition: opacity 0.15s ease-in-out
       margin-top: 90px
       width: 100%
 
