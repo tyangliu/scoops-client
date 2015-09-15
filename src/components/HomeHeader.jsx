@@ -21,7 +21,9 @@ export default class HomeHeader extends Component {
     ]
   };
 
-  state = {carouselIndex: 0};
+  state = {
+    carouselIndex: Math.floor(Math.random() * this.props.carouselTexts.length || 0)
+  };
 
   calcIndex = () => {
     let length    = this.props.carouselTexts.length,
@@ -52,7 +54,9 @@ export default class HomeHeader extends Component {
       <div style={styles.headerText} key='headerText0'>
         <Style rules={styles.headerTextRules} />
         <h1 style={styles.headerTitle}>
-          <span style={styles.carouselTextBefore}>How do I&nbsp;</span>
+          <span style={styles.carouselTextBefore} key='carouselTextBefore0'>
+            How do I&nbsp;
+          </span>
           <span style={styles.carouselText} ref='carouselText'>
             <TimeoutTransitionGroup
               component='span'
@@ -112,19 +116,19 @@ const styles = styler`
       opacity: 1
 
   carouselTextBefore
-    display: inline-block
     margin-right: 14px
+
+    @media (max-width: 540px)
+      display: inline-block
 
   carouselText
     color: rgba(255,255,255,1)
-    display: inline-block
-    padding: 4px 0
+    display: inline
     border-bottom: 3px solid rgba(255,255,255,0.5)
     font-style: italic
     margin-right: 14px
 
   carouselTextAfter
-    display: inline-block
 
   caption
     color: rgba(255,255,255,0.9)
