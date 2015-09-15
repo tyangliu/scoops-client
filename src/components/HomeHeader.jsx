@@ -55,7 +55,7 @@ export default class HomeHeader extends Component {
         <Style rules={styles.headerTextRules} />
         <h1 style={styles.headerTitle}>
           <span style={styles.carouselTextBefore} key='carouselTextBefore0'>
-            How do I&nbsp;
+            How can I&nbsp;
           </span>
           <span style={styles.carouselText} ref='carouselText'>
             <TimeoutTransitionGroup
