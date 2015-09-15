@@ -158,18 +158,20 @@ const styles = styler`
       width: 100%
       opacity: 0
       transition: opacity 0.15s ease-in-out
-      pointer-events: none
       margin-top: 90px
+      pointer-events: none
+      padding-bottom: 36px
 
   navListOpen
     float: right
 
     @media (max-width: 800px)
       float: none
+      width: 100%
       opacity: 1
       transition: opacity 0.15s ease-in-out
       margin-top: 90px
-      width: 100%
+      padding-bottom: 36px
 
   navItem
     display: inline-block
