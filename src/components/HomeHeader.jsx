@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react/addons';
+import React, { Component } from 'react';
 import Radium, { Style } from 'radium';
 import styler from 'react-styling';
 import TimeoutTransitionGroup from 'timeout-transition-group';
@@ -97,9 +97,6 @@ const styles = styler`
     @media (max-width: 800px)
       margin-left: 0
 
-  headerTitle
-    position: relative
-
   headerTextRules
     span.carousel-enter
       opacity: 0
@@ -114,6 +111,9 @@ const styles = styler`
 
     span.carousel-leave.carousel-leave-active
       opacity: 1
+
+  headerTitle
+    position: relative
 
   carouselTextBefore
     margin-right: 14px

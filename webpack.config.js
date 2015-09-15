@@ -13,6 +13,9 @@ module.exports = {
     path: __dirname + '/dist',
     publicPath: ''
   },
+  plugins: [
+    // new webpack.optimize.UglifyJsPlugin({minimize: true})
+  ],
   module: {
     loaders: [
       {

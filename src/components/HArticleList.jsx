@@ -26,7 +26,8 @@ export default class HArticleList extends Component {
       .map((articles, index) =>
         <div key={'articleChunk' + index}>
           {articles} <div style={styles.clearfix}></div>
-        </div>)
+        </div>
+      )
       .value();
 
     return (

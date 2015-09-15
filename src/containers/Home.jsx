@@ -131,10 +131,12 @@ const styles = styler`
       margin-left: 0
 
   backgroundCaptionIcon
-    opacity: 0.6
+    font-size: 18px
+    line-height: 24px
+    text-align: left
     float: left
     margin: 0 8px 8px 0
-    text-align: left
+    opacity: 0.6
 
   header
     height: 540px
