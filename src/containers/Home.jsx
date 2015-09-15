@@ -111,7 +111,7 @@ const styles = styler`
     position: fixed
     top: 0
     width: 100vw
-    height: 100vh
+    height: 120vh
     z-index: -10
     background-image: url('${require('../images/longboat.jpg')}')
     background-position: center
