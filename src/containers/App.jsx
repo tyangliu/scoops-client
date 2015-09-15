@@ -89,12 +89,10 @@ const styles = styler`
       flex: 1 0 auto
       width: 100%
 
-    div.page-enter {
-      opacity: 0;
+    div.page-enter
+      opacity: 0
       transition: opacity .2s ease-in-out;
-    }
 
-    div.page-enter.page-enter-active {
-      opacity: 1;
-    }
+    div.page-enter.page-enter-active
+      opacity: 1
 `;

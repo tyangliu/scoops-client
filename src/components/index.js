@@ -3,6 +3,8 @@
 export NavBar from './NavBar.jsx';
 export FooterBar from './FooterBar.jsx';
 
+export HomeHeader from './HomeHeader.jsx';
+
 export PageHeading from './PageHeading.jsx';
 export IconHeading from './IconHeading.jsx';
 export SectionLink from './SectionLink.jsx';

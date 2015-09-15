@@ -45,7 +45,7 @@ const styles = styler`
 
     @media (max-width: 1200px)
       width: 100%
-    @media (max-width: 780px)
+    @media (max-width: 800px)
       height: 600px
 
   eventTileContainer
@@ -53,7 +53,7 @@ const styles = styler`
     height: 300px
     display: inline-block
 
-    @media (max-width: 780px)
+    @media (max-width: 800px)
       width: 100%
       display: block
 
