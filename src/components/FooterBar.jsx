@@ -26,6 +26,8 @@ const styles = styler`
     flex: none
     padding: 11px 24px
     border-top: 1px solid rgba(0,0,0,0.15)
+    background: rgba(255,255,255,1)
+    z-index: 100
 
   logo
     background: url('${require('../images/logo-color.svg')}') no-repeat center

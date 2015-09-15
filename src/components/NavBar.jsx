@@ -67,7 +67,7 @@ const styles = styler`
     padding: 20px 24px
     position: absolute
     top: 0
-    z-index: 10
+    z-index: 100
     width: 100%
 
     &normal

@@ -73,11 +73,18 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div style={styles.home}>
         <DocumentTitle title='Home - SCOOPS'/>
-        <header style={styles.header} key='home0'>
+        <div style={styles.background} key='homeBackground0'></div>
+        <header style={styles.header} key='homeHeader0'>
           <HomeHeader />
         </header>
+        <p style={styles.backgroundCaption} key='backgroundCaption0'>
+          <i className='material-icons' style={styles.backgroundCaptionIcon}>
+            photo_camera
+          </i>
+          <span><em>SCOOPS</em> at Day of the Longboat 2014</span>
+        </p>
         <div>
           <IconHeading icon='event'>Upcoming Events</IconHeading>
           <HEventList events={this.state.events} />
@@ -96,6 +103,39 @@ export default class Home extends Component {
 }
 
 const styles = styler`
+  home
+    position: relative
+    z-index: 0
+
+  background
+    position: fixed
+    top: 0
+    width: 100vw
+    height: 100vh
+    z-index: -10
+    background-image: url('${require('../images/longboat.jpg')}')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+
+    @media (max-device-width: 800px)
+      transition: height 999999s
+
+  backgroundCaption
+    margin-left: 10%
+    padding: 0 24px 24px
+    font-size: 14px
+    color: rgba(255,255,255,0.5)
+
+    @media (max-width: 800px)
+      margin-left: 0
+
+  backgroundCaptionIcon
+    opacity: 0.6
+    float: left
+    margin: 0 8px 8px 0
+    text-align: left
+
   header
     height: 540px
     padding: 0 24px
