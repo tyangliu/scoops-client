@@ -121,6 +121,9 @@ const styles = styler`
     @media (max-device-width: 800px)
       transition: height 999999s
 
+    @media (max-device-width: 800px) and (orientation: landscape)
+      height: 120vw
+
   backgroundCaption
     margin-left: 10%
     padding: 0 24px 24px
