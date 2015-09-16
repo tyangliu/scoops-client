@@ -13,9 +13,18 @@ export default class HEventList extends Component {
   };
 
   render() {
-    let events = this.props.events.slice(0,4),
+    let events = this.props.events.slice(0,4), length = events.length,
         eventTiles = events.map((event,index) =>
-          <div style={styles.eventTileContainer} key={'eventTile' + index}>
+          <div style={[styles.eventTileContainer, {
+                 width: (1 / length * 100) + '%',
+                 '@media (max-width: 1200px)': {
+                   width: (length % 2 && index == 0) ? '100%' : '50%'
+                 },
+                 '@media (max-width: 800px)': {
+                   width: '100%'
+                 }
+               }]}
+               key={'eventTile' + index}>
             <EventTile name={event.name}
                        startTime={event.startTime}
                        endTime={event.endTime} />
@@ -24,8 +33,7 @@ export default class HEventList extends Component {
 
     return (
       <section style={styles.eventList}>
-        <div style={styles.listGroup} key='group0'>{eventTiles.slice(0,2)}</div>
-        <div style={styles.listGroup} key='group1'>{eventTiles.slice(2,4)}</div>
+        {eventTiles}
         <div style={styles.clearfix}></div>
       </section>
     );
@@ -38,24 +46,10 @@ const styles = styler`
     box-shadow: 0 1px 6px rgba(0,0,0,0.25)
     width: 100%
 
-  listGroup
-    float: left
-    width: 50%
-    height: 300px
-
-    @media (max-width: 1200px)
-      width: 100%
-    @media (max-width: 800px)
-      height: 600px
-
   eventTileContainer
-    width: 50%
+    float: left
     height: 300px
     display: inline-block
-
-    @media (max-width: 800px)
-      width: 100%
-      display: block
 
   clearfix
     clear: both
