@@ -13,12 +13,13 @@ export default class HEventList extends Component {
   };
 
   render() {
-    let events = this.props.events.slice(0,4), length = events.length,
+    let events = this.props.events.slice(0,4),
+        numEvents = events.length,
         eventTiles = events.map((event,index) =>
           <div style={[styles.eventTileContainer, {
-                 width: (1 / length * 100) + '%',
+                 width: (1 / numEvents * 100) + '%',
                  '@media (max-width: 1200px)': {
-                   width: (length % 2 && index == 0) ? '100%' : '50%'
+                   width: (numEvents % 2 && index == 0) ? '100%' : '50%'
                  },
                  '@media (max-width: 800px)': {
                    width: '100%'
