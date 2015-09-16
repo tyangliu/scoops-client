@@ -13,10 +13,10 @@ export default class HomeHeader extends Component {
       'ace my interviews',
       'explore the world through co-op',
       'meet other co-op students',
-      'get my dream job',
+      'find my dream job',
       'express my love for science',
       'get more lab experience',
-      'have fun during a work term',
+      'have fun during my work term',
       'become a wizard'
     ]
   };
@@ -55,7 +55,7 @@ export default class HomeHeader extends Component {
         <Style rules={styles.headerTextRules} />
         <h1 style={styles.headerTitle}>
           <span style={styles.carouselTextBefore} key='carouselTextBefore0'>
-            How can I&nbsp;
+            I want to&nbsp;
           </span>
           <span style={styles.carouselText} ref='carouselText'>
             <TimeoutTransitionGroup
@@ -67,16 +67,14 @@ export default class HomeHeader extends Component {
                 <span key={'carouselTextInner' + i}>{carouselTexts[i]}</span>
             </TimeoutTransitionGroup>
           </span>
-          <span style={styles.carouselTextAfter}>?</span>
         </h1>
         <p style={styles.caption}>
           We host
           <span style={styles.emphasized}> events </span>and
           <span style={styles.emphasized}> workshops </span>
-          to answer your questions&nbsp;
-          <span style={styles.newLine}
-                key='headerCaptionText0'>
-            and help you get the most out of your science co-op experience.
+          to help you carry out your ambitions&nbsp;
+          <span style={styles.newLine} key='headerCaptionText0'>
+            and make the most out of your science co-op experience.
           </span>
         </p>
       </div>
@@ -116,7 +114,7 @@ const styles = styler`
     position: relative
 
   carouselTextBefore
-    margin-right: 14px
+    margin-right: 10px
 
     @media (max-width: 540px)
       display: inline-block
@@ -126,9 +124,7 @@ const styles = styler`
     display: inline
     border-bottom: 3px solid rgba(255,255,255,0.5)
     font-style: italic
-    margin-right: 14px
-
-  carouselTextAfter
+    margin-right: 10px
 
   caption
     color: rgba(255,255,255,0.9)
