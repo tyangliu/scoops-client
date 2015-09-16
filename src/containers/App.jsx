@@ -21,12 +21,12 @@ export default class App extends Component {
       <div style={styles.app}>
         <Style rules={styles.appRules} />
         <NavBar inverted={this.state.inverted}>
-          <Link to='/' activeClassName='active' onlyActiveOnIndex={true}>Home</Link>
-          <Link to='/events' activeClassName='active'>Events</Link>
-          <Link to='/blog' activeClassName='active'>Blog</Link>
-          <Link to='/mentorship' activeClassName='active'>Mentorship</Link>
-          <Link to='/about' activeClassName='active'>About</Link>
-          <Link to='/contact' activeClassName='active'>Contact</Link>
+          <Link to='/' onlyActiveOnIndex={true}>Home</Link>
+          <Link to='/events'>Events</Link>
+          <Link to='/blog'>Blog</Link>
+          <Link to='/mentorship'>Mentorship</Link>
+          <Link to='/about'>About</Link>
+          <Link to='/contact'>Contact</Link>
         </NavBar>
         <main style={{
           backgroundColor: this.state.backgroundColor,

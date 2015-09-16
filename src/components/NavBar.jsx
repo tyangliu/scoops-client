@@ -24,10 +24,8 @@ export default class NavBar extends Component {
         mobileMenuOpen = this.state.mobileMenuOpen;
 
     let children = Children.map(this.props.children, (child, index) =>
-      <li style={styles.navItem}
-          key={'navItem' + index}
-          onClick={this.closeMenu}>
-        {child}
+      <li style={styles.navItem} key={'navItem' + index} onClick={this.closeMenu}>
+        {React.cloneElement(child, {activeClassName: 'active'})}
       </li>
     );
 
