@@ -119,6 +119,7 @@ const styles = styler`
     background-size: cover
 
     @media (max-device-width: 800px)
+      height: 160vh
       transition: height 999999s
 
   backgroundCaption
