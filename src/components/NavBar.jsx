@@ -150,6 +150,8 @@ const styles = styler`
 
   navList
     float: right
+    padding-top: 5px
+    padding-bottom: 5px
 
     @media (max-width: 800px)
       float: none
@@ -173,10 +175,11 @@ const styles = styler`
 
   navItem
     display: inline-block
+    font-size: 14px
     font-weight: bold
     text-transform: uppercase
     letter-spacing: 1px
-    line-height: 43px
+    line-height: 37px
     margin-left: 24px
 
     @media (max-width: 800px)
