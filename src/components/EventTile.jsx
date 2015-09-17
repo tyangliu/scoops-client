@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import styler from 'react-styling';
-import moment from 'moment';
+import XDate from 'xdate';
 
 @Radium
 export default class EventTile extends Component {
@@ -16,15 +16,20 @@ export default class EventTile extends Component {
 
   render() {
     let name = this.props.name,
-        startTime = moment(this.props.startTime).format('ddd, MMMM M, YYYY, h:MMA'),
-        endTime = moment(this.props.endTime).format('h:MMA');
+        startTime = (() => {
+          let startTimeObj = new XDate(this.props.startTime), nowObj = new XDate(),
+              isThisYear = startTimeObj.getFullYear() == nowObj.getFullYear(),
+              format = `ddd, MMMM M${isThisYear ? '' : ', yyyy'}, h:mtt`;
+          return (startTimeObj).toString(format);
+        })(),
+        endTime = (new XDate(this.props.endTime)).toString('h:mtt');
 
     return (
       <div style={styles.eventTile}>
         <div style={styles.thumbnail}></div>
         <div style={styles.summary}>
           <h3>{name}</h3>
-          <p style={styles.date}>{startTime}-{endTime}</p>
+          <p style={styles.date}>{startTime}&ndash;{endTime}</p>
         </div>
       </div>
     );

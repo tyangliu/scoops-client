@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Radium from 'radium';
 import styler from 'react-styling';
 import { Link } from 'react-router';
-import moment from 'moment';
+import XDate from 'xdate';
 
 @Radium
 export default class ArticleTile extends Component {
@@ -17,7 +17,12 @@ export default class ArticleTile extends Component {
 
   render() {
     let title = this.props.title,
-        createdOn = moment(this.props.createdOn).format('ddd, MMMM M, YYYY'),
+        createdOn = (() => {
+          let createdOnObj = new XDate(this.props.createdOn), nowObj = new XDate(),
+              isThisYear = createdOnObj.getFullYear() == nowObj.getFullYear(),
+              format = `ddd, MMMM M${isThisYear ? '' : ', yyyy'}`;
+          return (createdOnObj).toString(format);
+        })(),
         summary = this.props.summary;
 
     return (

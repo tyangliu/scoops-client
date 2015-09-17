@@ -1,12 +1,11 @@
 'use strict';
 
-import React, { Component, Children } from 'react/addons';
+import React, { Component, Children } from 'react';
 import Radium, { Style } from 'radium';
 import styler from 'react-styling';
+import TimeoutTransitionGroup from 'timeout-transition-group';
 import { Router, Link } from 'react-router';
 import { NavBar, FooterBar } from '../components';
-
-let { CSSTransitionGroup } = React.addons;
 
 @Radium
 export default class App extends Component {
@@ -32,13 +31,17 @@ export default class App extends Component {
           backgroundColor: this.state.backgroundColor,
           transition: 'background-color 0.2s ease-in-out'
         }}>
-          <CSSTransitionGroup component='div' transitionName='page' transitionLeave={false}>
+          <TimeoutTransitionGroup component='div'
+                                  transitionName='page'
+                                  enterTimeout={400}
+                                  leaveTimeout={400}
+                                  transitionLeave={false}>
             {React.cloneElement(this.props.children || <div />, {
               setInvertedNav: inverted => this.setState({inverted: !!inverted}),
               setBackgroundColor: color => this.setState({backgroundColor: color}),
               key: this.props.location.pathname
             })}
-          </CSSTransitionGroup>
+          </TimeoutTransitionGroup>
         </main>
         <FooterBar />
       </div>

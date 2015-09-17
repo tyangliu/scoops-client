@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import styler from 'react-styling';
-import _ from 'lodash';
+import chunk from 'chunk';
 import ArticleTile from './ArticleTile.jsx';
 
 @Radium
@@ -14,21 +14,21 @@ export default class HArticleList extends Component {
   };
 
   render() {
-    let articleTiles = _.chain(this.props.articles)
+    let articleTiles = this.props.articles
       .map((article,index) =>
         <div style={styles.articleTileContainer} key={'articleTile' + index}>
           <ArticleTile title={article.title}
                        createdOn={article.createdOn}
                        summary={article.summary} />
         </div>
-      )
-      .chunk(3)
+      );
+
+    articleTiles = chunk(articleTiles, 3)
       .map((articles, index) =>
         <div key={'articleChunk' + index}>
           {articles} <div style={styles.clearfix}></div>
         </div>
-      )
-      .value();
+      );
 
     return (
       <section style={styles.articleList}>
