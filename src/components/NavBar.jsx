@@ -175,7 +175,7 @@ const styles = styler`
 
   navItem
     display: inline-block
-    font-size: 14px
+    font-size: 15px
     font-weight: bold
     text-transform: uppercase
     letter-spacing: 1px

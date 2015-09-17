@@ -55,7 +55,7 @@ const styles = styler`
     background: rgba(255,255,255,0.9)
 
   date
-    font-size: 14px
+    font-size: 13px
     text-transform: uppercase
     letter-spacing: 1px
     opacity: 0.85
