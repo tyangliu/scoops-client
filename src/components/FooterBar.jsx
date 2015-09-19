@@ -39,6 +39,7 @@ const styles = styler`
       width: 64px
 
   copyText
+    color: rgba(24,50,79,0.64)
     float: right
     text-align: right
     margin-right: 24px
