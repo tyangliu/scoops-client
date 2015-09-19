@@ -17,7 +17,7 @@ export default class PageHeading extends Component {
         content  = this.props.children || this.props.content;
 
     return (
-      <header style={inverted ? styles.header.inverted : styles.header.normal}>
+      <header style={styles.header[inverted ? 'inverted' : 'normal']}>
         <h1>{content}</h1>
       </header>
     );

@@ -29,8 +29,8 @@ export default class ArticleTile extends Component {
 
     return (
       <div style={styles.articleTile}>
-        <div style={hero ? styles.photo.hero : styles.photo.normal}></div>
-        <div style={hero ? styles.content.hero : styles.content.normal}>
+        <div style={styles.photo[hero ? 'hero' : 'normal']}></div>
+        <div style={styles.content[hero ? 'hero' : 'normal']}>
           <Link to=''><h3>{title}</h3></Link>
           <p style={styles.date}>{createdOn}</p>
           <p style={styles.summary}>{summary}</p>

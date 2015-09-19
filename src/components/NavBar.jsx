@@ -29,27 +29,31 @@ export default class NavBar extends Component {
       </li>
     );
 
-    let navStyles = mobileMenuOpen
-      ? (inverted ? styles.nav.openInverted : styles.nav.open)
-      : styles.nav.normal;
+    let navStyles = styles.nav[mobileMenuOpen
+      ? (inverted ? 'openInverted' : 'open')
+      : 'normal'];
 
     return (
       <nav style={navStyles} className="mainNav">
-        <Style rules={inverted ? styles.navRulesInverted : styles.navRules} scopeSelector=".mainNav"/>
+        <Style rules={styles[inverted ? 'navRulesInverted' : 'navRules']}
+               scopeSelector=".mainNav"/>
         <div style={styles.logo}>
           <Link to='/'
-                style={inverted ? styles.logoImg.inverted : styles.logoImg.normal}
+                style={styles.logoImg[inverted ? 'inverted' : 'normal']}
                 onClick={this.closeMenu} />
-          <p style={inverted ? styles.logoText.inverted : styles.logoText.normal} key='logoText0'>
+          <p style={styles.logoText[inverted ? 'inverted' : 'normal']}
+             key='logoText0'>
             Science Co-op Students Association
           </p>
         </div>
-        <button style={inverted ? styles.menuToggle.inverted : styles.menuToggle.normal}
+        <button style={styles.menuToggle[inverted ? 'inverted' : 'normal']}
                 key='menuToggle0'
                 onClick={this.toggleMenu}>
-          <i style={styles.menuToggleIcon} className='material-icons'>{mobileMenuOpen ? 'close' : 'menu'}</i>
+          <i style={styles.menuToggleIcon} className='material-icons'>
+            {mobileMenuOpen ? 'close' : 'menu'}
+          </i>
         </button>
-        <ul style={mobileMenuOpen ? styles.navListOpen : styles.navList}
+        <ul style={styles[mobileMenuOpen ? 'navListOpen' : 'navList']}
             key='navList0'>
           {children}
         </ul>

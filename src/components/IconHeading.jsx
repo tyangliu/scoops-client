@@ -19,10 +19,10 @@ export default class IconHeading extends Component {
 
     return (
       <h2 style={styles.heading}>
-        <i style={inverted ? styles.icon.inverted : styles.icon} className='material-icons'>
+        <i style={styles.icon[inverted ? 'inverted' : 'normal']} className='material-icons'>
           {this.props.icon}
         </i>
-        <span style={inverted ? styles.titleText.inverted : styles.titleText.normal}>
+        <span style={styles.titleText[inverted ? 'inverted' : 'normal']}>
           {content}
         </span>
       </h2>
@@ -40,6 +40,8 @@ const styles = styler`
   icon
     font-size: 36px
     display: block
+
+    &normal
 
     &inverted
       opacity: 0.4

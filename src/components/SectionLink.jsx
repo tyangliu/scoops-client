@@ -10,7 +10,6 @@ export default class SectionLink extends Component {
 
   static defaultProps = {
     inverted: true,
-    underlined: false,
     content: 'Link Text',
     to: ''
   };
@@ -24,7 +23,7 @@ export default class SectionLink extends Component {
     return (
       <div style={styles.linkContainer}>
         <Link to={this.props.to}
-              style={inverted ? styles.sectionLink.inverted : styles.sectionLink.normal}
+              style={styles.sectionLink[inverted ? 'inverted' : 'normal']}
               onClick={this.scrollToTop}>
           <span style={styles.sectionLinkText}>
             {content}
