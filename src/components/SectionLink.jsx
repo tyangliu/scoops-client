@@ -15,6 +15,8 @@ export default class SectionLink extends Component {
     to: ''
   };
 
+  scrollToTop() { window && window.scrollTo(0, 0); }
+
   render() {
     let inverted = this.props.inverted,
         content  = this.props.children || this.props.content;
@@ -22,7 +24,8 @@ export default class SectionLink extends Component {
     return (
       <div style={styles.linkContainer}>
         <Link to={this.props.to}
-              style={inverted ? styles.sectionLink.inverted : styles.sectionLink.normal}>
+              style={inverted ? styles.sectionLink.inverted : styles.sectionLink.normal}
+              onClick={this.scrollToTop}>
           <span style={styles.sectionLinkText}>
             {content}
           </span>
