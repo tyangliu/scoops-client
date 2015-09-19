@@ -68,6 +68,7 @@ const styles = styler`
         max-width: 840px
         float: none
         padding: 0 24px
+        margin: 0 auto
 
   clearfix
     clear: both
