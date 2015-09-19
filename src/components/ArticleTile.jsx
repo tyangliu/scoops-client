@@ -13,6 +13,7 @@ export default class ArticleTile extends Component {
     title: 'Article Title',
     createdOn: '',
     summary: '',
+    imagePath: '',
     hero: false
   };
 
@@ -25,11 +26,19 @@ export default class ArticleTile extends Component {
           return createdOnObj.toString(format);
         })(),
         summary = this.props.summary,
+        imagePath = this.props.imagePath,
         hero = this.props.hero;
+
+    let imageStyles = [styles.image[hero ? 'hero' : 'normal']];
+
+    imagePath && imageStyles.push({
+      backgroundImage: `url('${imagePath}')`
+    });
 
     return (
       <div style={styles.articleTile}>
-        <div style={styles.photo[hero ? 'hero' : 'normal']}></div>
+        <div style={imageStyles}>
+        </div>
         <div style={styles.content[hero ? 'hero' : 'normal']}>
           <Link to=''><h3>{title}</h3></Link>
           <p style={styles.date}>{createdOn}</p>
@@ -48,9 +57,12 @@ const styles = styler`
     position: relative
     z-index: 0
 
-  photo
+  image
     width: 100%
-    background: #4b74b5
+    background-color: #4b74b5
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
 
     &normal
       height: 280px

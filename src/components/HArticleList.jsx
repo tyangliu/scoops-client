@@ -22,7 +22,8 @@ export default class HArticleList extends Component {
              key={'articleTile' + index}>
           <ArticleTile title={article.title}
                        createdOn={article.createdOn}
-                       summary={article.summary} />
+                       summary={article.summary}
+                       imagePath={article.imagePath} />
         </div>
       );
 

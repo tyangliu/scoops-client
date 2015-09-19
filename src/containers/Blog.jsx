@@ -17,7 +17,8 @@ export default class Blog extends Component {
         summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a
-          type specimen book...`
+          type specimen book...`,
+        imagePath: require('../images/mice_photo3.jpg')
       },
       {
         title: 'Lorem Ipsum',
@@ -25,7 +26,8 @@ export default class Blog extends Component {
         summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a
-          type specimen book...`
+          type specimen book...`,
+        imagePath: require('../images/movember_photo1.jpg')
       },
       {
         title: 'Lorem Ipsum',
@@ -33,7 +35,8 @@ export default class Blog extends Component {
         summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a
-          type specimen book...`
+          type specimen book...`,
+        imagePath: require('../images/temp-mabel.jpg')
       },
       {
         title: 'Two Scoops to Victory',
@@ -41,7 +44,8 @@ export default class Blog extends Component {
         summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a
-          type specimen book...`
+          type specimen book...`,
+        imagePath: require('../images/movember_photo3.jpg')
       }
     ]
   };
@@ -59,6 +63,7 @@ export default class Blog extends Component {
             <ArticleTile title={article.title}
                          createdOn={article.createdOn}
                          summary={article.summary}
+                         imagePath={article.imagePath}
                          hero={true} />
           </div>
         ),
@@ -66,6 +71,7 @@ export default class Blog extends Component {
           <div style={styles.articleTileContainer}>
             <ArticleTile title={article.title}
                          createdOn={article.createdOn}
+                         imagePath={article.imagePath}
                          summary={article.summary} />
           </div>
         );
