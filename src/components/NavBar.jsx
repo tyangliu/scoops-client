@@ -29,9 +29,9 @@ export default class NavBar extends Component {
       </li>
     );
 
-    let navStyles = styles.nav[mobileMenuOpen
-      ? (inverted ? 'openInverted' : 'open')
-      : 'normal'];
+    let navStyles = styles.nav[
+      mobileMenuOpen ? (inverted ? 'openInverted' : 'open') : 'normal'
+    ];
 
     return (
       <nav style={navStyles} className="mainNav">
