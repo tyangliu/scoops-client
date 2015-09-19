@@ -31,7 +31,7 @@ export default class HArticleList extends Component {
       );
 
     return (
-      <section style={styles.articleList}>
+      <section style={styles.articleList} key='articleList0'>
         {articleTiles}
       </section>
     );
@@ -43,6 +43,9 @@ const styles = styler`
   articleList
     margin: 0 12px
 
+    @media (max-width: 960px)
+      margin: 0
+
   articleTileContainer
     width: 33.33%
     float: left
@@ -50,7 +53,10 @@ const styles = styler`
 
     @media (max-width: 960px)
       width: 100%
-      display: block
+      max-width: 840px
+      float: none
+      padding: 0 24px
+      margin: 0 auto
 
   clearfix
     clear: both

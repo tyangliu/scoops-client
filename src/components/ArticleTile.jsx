@@ -12,7 +12,8 @@ export default class ArticleTile extends Component {
   static defaultProps = {
     title: 'Article Title',
     createdOn: '',
-    summary: ''
+    summary: '',
+    hero: false
   };
 
   render() {
@@ -23,12 +24,13 @@ export default class ArticleTile extends Component {
               format = `ddd, MMMM M${isThisYear ? '' : ', yyyy'}`;
           return (createdOnObj).toString(format);
         })(),
-        summary = this.props.summary;
+        summary = this.props.summary,
+        hero = this.props.hero;
 
     return (
       <div style={styles.articleTile}>
-        <div style={styles.thumbnail}></div>
-        <div style={styles.content}>
+        <div style={hero ? styles.photo.hero : styles.photo.normal}></div>
+        <div style={hero ? styles.content.hero : styles.content.normal}>
           <Link to=''><h3>{title}</h3></Link>
           <p style={styles.date}>{createdOn}</p>
           <p style={styles.summary}>{summary}</p>
@@ -43,14 +45,34 @@ const styles = styler`
   articleTile
     width: 100%
     height: 100%
+    position: relative
+    z-index: 0
 
-  thumbnail
+  photo
     width: 100%
-    height: 280px
     background: #4b74b5
 
+    &normal
+      height: 280px
+
+    &hero
+      position: absolute
+      z-index: -1
+      height: 100%
+
   content
-    padding: 24px
+    &normal
+      padding: 24px
+
+    &hero
+      position: absolute
+      max-width: 840px
+      margin: 0 auto
+      left: 0
+      right: 0
+      bottom: 48px
+      padding: 36px 48px
+      background: rgba(255,255,255,1)
 
   date
     font-size: 13px
@@ -59,6 +81,6 @@ const styles = styler`
     opacity: 0.85
 
   summary
-    margin: 24px 0 36px
+    margin: 24px 0 12px
 
 `;
