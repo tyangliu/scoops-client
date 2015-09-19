@@ -150,7 +150,8 @@ const styles = styler`
 
   menuToggleIcon
     font-size: 30px
-    line-height: 36px
+    line-height: 37px
+    margin-top: 5px
 
   navList
     float: right
