@@ -15,8 +15,11 @@ export default class HArticleList extends Component {
 
   render() {
     let articleTiles = this.props.articles
-      .map((article,index) =>
-        <div style={styles.articleTileContainer} key={'articleTile' + index}>
+      .map((article,index,all) =>
+        <div style={styles.articleTileContainer[
+              index == (all.length - 1) ? 'last' : 'normal'
+             ]}
+             key={'articleTile' + index}>
           <ArticleTile title={article.title}
                        createdOn={article.createdOn}
                        summary={article.summary} />
@@ -51,12 +54,20 @@ const styles = styler`
     float: left
     padding: 0 12px
 
-    @media (max-width: 960px)
-      width: 100%
-      max-width: 840px
-      float: none
-      padding: 0 24px
-      margin: 24px auto
+    &normal
+      @media (max-width: 960px)
+        width: 100%
+        max-width: 840px
+        float: none
+        padding: 0 24px
+        margin: 0 auto 24px
+
+    &last
+      @media (max-width: 960px)
+        width: 100%
+        max-width: 840px
+        float: none
+        padding: 0 24px
 
   clearfix
     clear: both

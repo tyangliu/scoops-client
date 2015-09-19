@@ -96,6 +96,12 @@ export default class Home extends Component {
           <HArticleList articles={this.state.articles} />
           <SectionLink to='/blog' inverted={false}>To the Blog</SectionLink>
         </div>
+        <div style={styles.subscribe}>
+          <h3>Stay current with <em>SCOOPS</em></h3>
+          <p style={styles.subscribeDescription}>
+            Get updates on the latest events, news, and deadlines delivered to your email
+          </p>
+        </div>
       </div>
     );
   }
@@ -151,7 +157,7 @@ const styles = styler`
   articles
     z-index: 0
     position: relative
-    padding: 20px 0 60px
+    padding: 20px 0
     overflow-y: hidden
 
   articlesBackground
@@ -161,4 +167,13 @@ const styles = styler`
     width: 100%
     height: 100%
     z-index: -1
+
+  subscribe
+    background: rgba(75,116,181,1)
+    color: rgba(255,255,255,1)
+    padding: 48px 24px
+    text-align: center
+
+  subscribeDescription
+    opacity: 0.75
 `;
