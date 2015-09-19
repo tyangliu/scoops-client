@@ -90,11 +90,11 @@ export default class Blog extends Component {
 
 const styles = styler`
   articleHeroContainer
-    height: 540px
+    height: 600px
     margin-bottom: 48px
 
-    @media (max-width: 480px)
-      height: 640px
+    @media (max-width: 800px)
+      height: 800px
 
   articleTileContainer
     max-width: 840px
