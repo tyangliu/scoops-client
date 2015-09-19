@@ -22,7 +22,7 @@ export default class ArticleTile extends Component {
           let createdOnObj = new XDate(this.props.createdOn), nowObj = new XDate(),
               isThisYear = createdOnObj.getFullYear() == nowObj.getFullYear(),
               format = `ddd, MMMM M${isThisYear ? '' : ', yyyy'}`;
-          return (createdOnObj).toString(format);
+          return createdOnObj.toString(format);
         })(),
         summary = this.props.summary,
         hero = this.props.hero;

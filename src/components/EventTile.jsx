@@ -20,7 +20,7 @@ export default class EventTile extends Component {
           let startTimeObj = new XDate(this.props.startTime), nowObj = new XDate(),
               isThisYear = startTimeObj.getFullYear() == nowObj.getFullYear(),
               format = `ddd, MMMM M${isThisYear ? '' : ', yyyy'}, h:mtt`;
-          return (startTimeObj).toString(format);
+          return startTimeObj.toString(format);
         })(),
         endTime = (new XDate(this.props.endTime)).toString('h:mtt');
 
