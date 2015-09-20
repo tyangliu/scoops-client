@@ -169,6 +169,8 @@ const styles = styler`
 
   navListOpen
     float: right
+    padding-top: 5px
+    padding-bottom: 5px
 
     @media (max-width: 800px)
       float: none
