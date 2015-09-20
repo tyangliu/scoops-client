@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 import styler from 'react-styling';
+import { Link } from 'react-router';
 import XDate from 'xdate';
 
 @Radium
@@ -14,6 +15,11 @@ export default class EventTile extends Component {
     endTime: ''
   };
 
+  state = { hovered: false };
+
+  hover = () => this.setState({hovered: true});
+  unhover = () => this.setState({hovered: false});
+
   render() {
     let name = this.props.name,
         startTime = (() => {
@@ -22,16 +28,22 @@ export default class EventTile extends Component {
               format = `ddd, MMMM M${isThisYear ? '' : ', yyyy'}, h:mtt`;
           return startTimeObj.toString(format);
         })(),
-        endTime = (new XDate(this.props.endTime)).toString('h:mtt');
+        endTime = (new XDate(this.props.endTime)).toString('h:mtt'),
+        hovered = this.state.hovered;
 
     return (
-      <div style={styles.eventTile}>
-        <div style={styles.thumbnail}></div>
+      <Link to=''
+            style={styles.eventTile}
+            onMouseOver={this.hover}
+            onMouseOut={this.unhover}>
+        <div style={styles.image} />
         <div style={styles.summary}>
-          <h3>{name}</h3>
+          <h3 style={styles.title[hovered ? 'hovered' : 'normal']}>
+            {name}
+          </h3>
           <p style={styles.date}>{startTime}&ndash;{endTime}</p>
         </div>
-      </div>
+      </Link>
     );
   }
 
@@ -42,8 +54,11 @@ const styles = styler`
     width: 100%
     height: 100%
     position: relative
+    display: block
+    color: rgba(24,50,79,1)
+    font-weight: normal
 
-  thumbnail
+  image
     height: 100%
     background: #4b74b5
 
@@ -53,6 +68,16 @@ const styles = styler`
     bottom: 0
     width: 100%
     background: rgba(255,255,255,0.9)
+
+  title
+    display: inline-block
+    color: rgba(24,50,79,1)
+    transition: color 0.15s ease-in-out
+
+    &normal
+
+    &hovered
+      color: rgba(75,116,181,1)
 
   date
     font-size: 13px
