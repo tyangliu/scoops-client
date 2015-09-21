@@ -48,10 +48,10 @@ const styles = styler`
   sectionLink
     display: inline-block
     padding: 7px 0
-    color: rgba(7,176,193,1)
-    border-bottom: 2px solid rgba(48,161,196,1)
 
     &normal
+      color: rgba(7,176,193,1)
+      border-bottom: 2px solid rgba(7,176,193,1)
 
     &inverted
       color: rgba(255,255,255,1)

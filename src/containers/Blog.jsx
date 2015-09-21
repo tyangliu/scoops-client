@@ -21,7 +21,7 @@ export default class Blog extends Component {
         imagePath: require('../images/mice_photo3.jpg')
       },
       {
-        title: 'Lorem Ipsum',
+        title: 'Day of the Longboat',
         createdOn: '2015-09-13T19:19:53.079Z',
         summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -30,7 +30,7 @@ export default class Blog extends Component {
         imagePath: require('../images/movember_photo1.jpg')
       },
       {
-        title: 'Lorem Ipsum',
+        title: 'Cool Down with Nitrogen',
         createdOn: '2015-09-13T19:19:53.079Z',
         summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -39,7 +39,7 @@ export default class Blog extends Component {
         imagePath: require('../images/temp-mabel.jpg')
       },
       {
-        title: 'Two Scoops to Victory',
+        title: 'My International Co-op Experience',
         createdOn: '2015-09-13T19:19:53.079Z',
         summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,

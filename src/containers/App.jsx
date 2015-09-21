@@ -59,6 +59,7 @@ const styles = styler`
     display: flex
     flex-direction: column
     min-height: 100vh
+    -webkit-tap-highlight-color:  rgba(7,176,193,0.3)
 
   appRules
     *

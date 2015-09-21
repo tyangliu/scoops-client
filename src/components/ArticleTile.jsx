@@ -17,11 +17,6 @@ export default class ArticleTile extends Component {
     hero: false
   };
 
-  state = { hovered: false };
-
-  hover = () => this.setState({hovered: true});
-  unhover = () => this.setState({hovered: false});
-
   render() {
     let title = this.props.title,
         createdOn = (() => {
@@ -32,8 +27,7 @@ export default class ArticleTile extends Component {
         })(),
         summary = this.props.summary,
         imagePath = this.props.imagePath,
-        hero = this.props.hero,
-        hovered = this.state.hovered;
+        hero = this.props.hero;
 
     let imageStyles = [styles.image[hero ? 'hero' : 'normal']];
 
@@ -42,19 +36,18 @@ export default class ArticleTile extends Component {
     });
 
     return (
-      <Link to=''
-            style={styles.articleTile}
-            onMouseOver={this.hover}
-            onMouseOut={this.unhover}>
-        <div style={imageStyles} />
+      <div to='' style={styles.articleTile}>
+        <Link to=''>
+          <div style={imageStyles} />
+        </Link>
         <div style={styles.content[hero ? 'hero' : 'normal']}>
-          <h3 style={styles.title[hovered ? 'hovered' : 'normal']}>
-            {title}
-          </h3>
+          <Link to=''>
+            <h3 style={styles.title}>{title}</h3>
+          </Link>
           <p style={styles.date}>{createdOn}</p>
           <p style={styles.summary}>{summary}</p>
         </div>
-      </Link>
+      </div>
     );
   }
 
@@ -66,9 +59,6 @@ const styles = styler`
     height: 100%
     position: relative
     z-index: 0
-    display: block
-    color: rgba(24,50,79,1)
-    font-weight: normal
 
   image
     width: 100%
@@ -87,13 +77,12 @@ const styles = styler`
 
   title
     display: inline-block
+    line-height: 33px
+    transition: color 0.1s ease-in-out
     color: rgba(24,50,79,1)
-    transition: color 0.15s ease-in-out
 
-    &normal
-
-    &hovered
-      color: rgba(75,116,181,1)
+    :hover
+      color: rgba(7,176,193,1)
 
   content
     &normal

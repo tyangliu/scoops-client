@@ -85,7 +85,7 @@ export default class HomeHeader extends Component {
 
 const styles = styler`
   headerText
-    margin-left: 10%
+    margin: 0 10%
     text-align: left
     color: rgba(255,255,255,0.75)
     position: relative
@@ -93,7 +93,7 @@ const styles = styler`
     transform: translateY(-50%)
 
     @media (max-width: 800px)
-      margin-left: 0
+      margin: 0
 
   headerTextRules
     span.carousel-enter

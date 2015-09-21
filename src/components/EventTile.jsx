@@ -32,18 +32,17 @@ export default class EventTile extends Component {
         hovered = this.state.hovered;
 
     return (
-      <Link to=''
-            style={styles.eventTile}
-            onMouseOver={this.hover}
-            onMouseOut={this.unhover}>
-        <div style={styles.image} />
+      <div style={styles.eventTile}>
+        <Link to=''>
+          <div style={styles.image} />
+        </Link>
         <div style={styles.summary}>
-          <h3 style={styles.title[hovered ? 'hovered' : 'normal']}>
-            {name}
-          </h3>
+          <Link to=''>
+            <h3 style={styles.title}>{name}</h3>
+          </Link>
           <p style={styles.date}>{startTime}&ndash;{endTime}</p>
         </div>
-      </Link>
+      </div>
     );
   }
 
@@ -54,9 +53,6 @@ const styles = styler`
     width: 100%
     height: 100%
     position: relative
-    display: block
-    color: rgba(24,50,79,1)
-    font-weight: normal
 
   image
     height: 100%
@@ -71,13 +67,12 @@ const styles = styler`
 
   title
     display: inline-block
+    line-height: 33px
+    transition: color 0.1s ease-in-out
     color: rgba(24,50,79,1)
-    transition: color 0.15s ease-in-out
 
-    &normal
-
-    &hovered
-      color: rgba(75,116,181,1)
+    :hover
+      color: rgba(7,176,193,1)
 
   date
     font-size: 13px
