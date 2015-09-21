@@ -19,7 +19,7 @@ export default class Blog extends Component {
           when an unknown printer took a galley of type and scrambled it to make a
           type specimen book...`,
         imagePath: require('../images/mice_photo3.jpg'),
-        color: 'rgba(235,133,64,.5)'
+        color: 'rgba(235,133,64,.7)'
       },
       {
         title: 'Day of the Longboat',
@@ -29,7 +29,7 @@ export default class Blog extends Component {
           when an unknown printer took a galley of type and scrambled it to make a
           type specimen book...`,
         imagePath: require('../images/movember_photo1.jpg'),
-        color: 'rgba(22,180,239,.5)'
+        color: 'rgba(22,180,239,.7)'
       },
       {
         title: 'Cool Down with Nitrogen',
@@ -39,7 +39,7 @@ export default class Blog extends Component {
           when an unknown printer took a galley of type and scrambled it to make a
           type specimen book...`,
         imagePath: require('../images/temp-mabel.jpg'),
-        color: 'rgba(46,183,183,.5)'
+        color: 'rgba(46,183,183,.7)'
       },
       {
         title: 'My International Co-op Experience',
@@ -49,7 +49,7 @@ export default class Blog extends Component {
           when an unknown printer took a galley of type and scrambled it to make a
           type specimen book...`,
         imagePath: require('../images/movember_photo3.jpg'),
-        color: 'rgba(107,124,221,.5)'
+        color: 'rgba(107,124,221,.7)'
       }
     ]
   };

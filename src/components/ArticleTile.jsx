@@ -80,11 +80,10 @@ const styles = styler`
 
   content
     border-style: solid
-    border-top-width: 3px
+    border-top-width: 4px
 
     &normal
       padding: 24px
-      margin-top: 12px
 
     &hero
       position: absolute
