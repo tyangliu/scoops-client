@@ -46,7 +46,8 @@ export default class Home extends Component {
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a
           type specimen book...`,
-        imagePath: require('../images/mice_photo3.jpg')
+        imagePath: require('../images/mice_photo3.jpg'),
+        color: 'rgba(235,133,64,.5)'
       },
       {
         title: 'Day of the Longboat',
@@ -55,7 +56,8 @@ export default class Home extends Component {
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a
           type specimen book...`,
-        imagePath: require('../images/movember_photo1.jpg')
+        imagePath: require('../images/movember_photo1.jpg'),
+        color: 'rgba(22,180,239,.5)'
       },
       {
         title: 'Cool Down with Nitrogen',
@@ -64,7 +66,8 @@ export default class Home extends Component {
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a
           type specimen book...`,
-        imagePath: require('../images/temp-mabel.jpg')
+        imagePath: require('../images/temp-mabel.jpg'),
+        color: 'rgba(46,183,183,.5)'
       }
     ]
   };

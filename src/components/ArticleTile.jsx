@@ -14,6 +14,7 @@ export default class ArticleTile extends Component {
     createdOn: '',
     summary: '',
     imagePath: '',
+    color: 'rgba(24,50,79,.2)',
     hero: false
   };
 
@@ -27,6 +28,7 @@ export default class ArticleTile extends Component {
         })(),
         summary = this.props.summary,
         imagePath = this.props.imagePath,
+        color = this.props.color,
         hero = this.props.hero;
 
     let imageStyles = [styles.image[hero ? 'hero' : 'normal']];
@@ -40,7 +42,8 @@ export default class ArticleTile extends Component {
         <Link to=''>
           <div style={imageStyles} />
         </Link>
-        <div style={styles.content[hero ? 'hero' : 'normal']}>
+        <div style={[styles.content[hero ? 'hero' : 'normal'],
+                     {borderColor: color}]}>
           <Link to=''>
             <h3 style={styles.title}>{title}</h3>
           </Link>
@@ -75,18 +78,13 @@ const styles = styler`
       z-index: -1
       height: 100%
 
-  title
-    display: inline-block
-    line-height: 33px
-    transition: color 0.1s ease-in-out
-    color: rgba(24,50,79,1)
-
-    :hover
-      color: rgba(7,176,193,1)
-
   content
+    border-style: solid
+    border-top-width: 3px
+
     &normal
       padding: 24px
+      margin-top: 12px
 
     &hero
       position: absolute
@@ -97,6 +95,15 @@ const styles = styler`
       bottom: 48px
       padding: 36px 48px
       background: rgba(255,255,255,1)
+
+  title
+    display: inline-block
+    line-height: 33px
+    transition: color 0.1s ease-in-out
+    color: rgba(24,50,79,1)
+
+    :hover
+      color: rgba(7,176,193,1)
 
   date
     font-size: 13px
