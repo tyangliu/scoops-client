@@ -15,11 +15,6 @@ export default class EventTile extends Component {
     endTime: ''
   };
 
-  state = { hovered: false };
-
-  hover = () => this.setState({hovered: true});
-  unhover = () => this.setState({hovered: false});
-
   render() {
     let name = this.props.name,
         startTime = (() => {
@@ -29,12 +24,18 @@ export default class EventTile extends Component {
           return startTimeObj.toString(format);
         })(),
         endTime = (new XDate(this.props.endTime)).toString('h:mtt'),
-        hovered = this.state.hovered;
+        imagePath = this.props.imagePath;
+
+    let imageStyles = [styles.image];
+
+    imagePath && imageStyles.push({
+      backgroundImage: `url('${imagePath}')`
+    });
 
     return (
       <div style={styles.eventTile}>
         <Link to=''>
-          <div style={styles.image} />
+          <div style={imageStyles} />
         </Link>
         <div style={styles.summary}>
           <Link to=''>
@@ -56,14 +57,17 @@ const styles = styler`
 
   image
     height: 100%
-    background: #4b74b5
+    background-color: #4b74b5
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
 
   summary
     position: absolute
     padding: 17px 24px 20px
     bottom: 0
     width: 100%
-    background: rgba(255,255,255,0.9)
+    background: rgba(255,255,255,0.95)
 
   title
     display: inline-block

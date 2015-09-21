@@ -42,8 +42,9 @@ export default class ArticleTile extends Component {
         <Link to=''>
           <div style={imageStyles} />
         </Link>
-        <div style={[styles.content[hero ? 'hero' : 'normal'],
-                     {borderColor: color}]}>
+        <div style={[styles.content[hero ? 'hero' : 'normal'], {
+               borderColor: color
+             }]}>
           <Link to=''>
             <h3 style={styles.title}>{title}</h3>
           </Link>

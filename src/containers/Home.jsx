@@ -20,22 +20,26 @@ export default class Home extends Component {
       {
         name: 'Krispy Kreme Sale',
         startTime: '2015-09-13T19:19:53.079Z',
-        endTime: '2015-09-13T19:19:53.079Z'
+        endTime: '2015-09-13T19:19:53.079Z',
+        imagePath: require('../images/mice_photo3.jpg')
       },
       {
         name: 'Mentorship Kickoff',
         startTime: '2015-09-13T19:19:53.079Z',
-        endTime: '2015-09-13T19:19:53.079Z'
+        endTime: '2015-09-13T19:19:53.079Z',
+        imagePath: require('../images/movember_photo1.jpg')
       },
       {
         name: 'MICE',
         startTime: '2015-09-13T19:19:53.079Z',
-        endTime: '2015-09-13T19:19:53.079Z'
+        endTime: '2015-09-13T19:19:53.079Z',
+        imagePath: require('../images/temp-mabel.jpg')
       },
       {
         name: 'Interview Workshop',
         startTime: '2015-09-13T19:19:53.079Z',
-        endTime: '2015-09-13T19:19:53.079Z'
+        endTime: '2015-09-13T19:19:53.079Z',
+        imagePath: require('../images/movember_photo3.jpg')
       }
     ],
     articles: [
@@ -81,7 +85,7 @@ export default class Home extends Component {
     return (
       <div style={styles.home}>
         <DocumentTitle title='Home - SCOOPS'/>
-        <div style={styles.background} key='homeBackground0'></div>
+        <div style={styles.background} key='homeBackground0' />
         <header style={styles.header} key='homeHeader0'>
           <HomeHeader />
         </header>
@@ -97,7 +101,7 @@ export default class Home extends Component {
           <SectionLink to='/events'>To All Events</SectionLink>
         </div>
         <div style={styles.articles}>
-          <div style={styles.articlesBackground}></div>
+          <div style={styles.articlesBackground} />
           <IconHeading icon='chrome_reader_mode'>The Latest Scoop</IconHeading>
           <HArticleList articles={this.state.articles} />
           <SectionLink to='/blog' inverted={false}>To the Blog</SectionLink>

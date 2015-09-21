@@ -28,7 +28,8 @@ export default class HEventList extends Component {
                key={'eventTile' + index}>
             <EventTile name={event.name}
                        startTime={event.startTime}
-                       endTime={event.endTime} />
+                       endTime={event.endTime}
+                       imagePath={event.imagePath} />
           </div>
         );
 
