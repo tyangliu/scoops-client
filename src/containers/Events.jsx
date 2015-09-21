@@ -79,12 +79,12 @@ export default class Events extends Component {
 const styles = styler`
   events
     position: relative
+    margin-bottom: 60px
 
   eventsList
     z-index: 0
     position: relative
     padding: 20px 0 0
-    margin-bottom: 40px
     overflow-y: hidden
 
   eventsListBackground
